@@ -29,9 +29,7 @@ class BrownPaperTicketsResource(base.RESTResource):
         """
         param_names = None
         params = base.get_params(param_names, locals())
-        import pdb; pdb.set_trace()
         request = http.Request('GET', self.get_url(), params)
-        import pdb; pdb.set_trace()
         return request, parsers.parse_xml
 
     # @base.apimethod

@@ -35,7 +35,6 @@ class BrownPaperTickets(base.Resource):
 
     def add_developer_id(self, request):
         request.params.update({'id': self.developer_id})
-        import pdb; pdb.set_trace()
     # def use_xml(self, request):
     #     request.headers['Content-Type'] = 'application/xml'
     #     request.headers.setdefault('Accept', 'application/xml')
@@ -50,12 +49,12 @@ class BrownPaperTickets(base.Resource):
         """
         return ev.Events(self)
 
-    # @base.resource(pl.Plan)
-    # def plan(self, plan_code):
-    #     """
-    #     Return the resource corresponding to a single plan.
-    #     """
-    #     return pl.Plan(self, plan_code)
+    @base.resource(ev.Event)
+    def event(self, event_id):
+        """
+        Return the resource corresponding to a single plan.
+        """
+        return ev.Event(self, event_id)
 
     # @base.resource(acc.Accounts)
     # def accounts(self):
