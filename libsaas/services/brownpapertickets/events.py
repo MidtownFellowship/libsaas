@@ -2,6 +2,7 @@ from libsaas.services import base
 from libsaas import http, parsers
 from . import resource
 
+
 class DatesBase(resource.BrownPaperTicketsResource):
 
     path = 'datelist'
@@ -15,6 +16,7 @@ class DatesBase(resource.BrownPaperTicketsResource):
 
     def get_url(self):
         return "{}/{}".format(self.parent.parent.apiroot, self.path)
+
 
 class Dates(DatesBase):
 
@@ -53,8 +55,8 @@ class Date(DatesBase):
 class EventsBase(resource.BrownPaperTicketsResource):
 
     path = 'eventlist'
-    @base.apimethod
 
+    @base.apimethod
     def get(self, client=None, cursor=None, per_page=None):
         """
         For single-object resources, fetch the object's data. For collections,

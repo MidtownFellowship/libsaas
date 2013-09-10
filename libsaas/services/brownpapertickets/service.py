@@ -4,7 +4,7 @@ from libsaas.filters import auth
 from libsaas.services import base
 
 from . import events as ev
-# from . import accounts as acc
+from . import orders as ordr
 # from . import invoices as inv
 # from . import coupons as coup
 # from . import transactions as tx
@@ -56,12 +56,12 @@ class BrownPaperTickets(base.Resource):
         """
         return ev.Event(self, event_id)
 
-    # @base.resource(acc.Accounts)
-    # def accounts(self):
-    #     """
-    #     Return the resource corresponding to all accounts.
-    #     """
-    #     return acc.Accounts(self)
+    @base.resource(ordr.Orders)
+    def orders(self, account, event_id):
+        """
+        Return the resource corresponding to all orders for an event.
+        """
+        return ordr.Orders(self, account=account, event_id=event_id)
 
     # @base.resource(acc.Account)
     # def account(self, account_code):
