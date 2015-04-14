@@ -15,3 +15,4 @@ constributing support for new services.
 .. _documentation: http://docs.libsaas.net/
 
 .. image:: https://secure.travis-ci.org/ducksboard/libsaas.png?branch=master
+ 
